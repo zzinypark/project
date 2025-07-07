@@ -20,6 +20,16 @@ form.addEventListener("submit", function(e){
     return;
   }
 
+  let Letter = /[a-zA-Z]/.test(userPw1)
+  let Number = /[0-9]/.test(userPw1)
+  if(userPw1.length < 8) {
+    alert("비밀번호는 8글자 이상이어야 합니다.")
+  }
+  if (!Letter || !Number){
+    alert('비밀번호에는 영문과 숫자가 포함되어야 합니다.')
+    return
+  }
+
   if(userPw1 !== userPw2){
     alert("비밀번호가 일치하지 않습니다.")
     return;
